@@ -17,12 +17,34 @@
                 +
             </button>
         </div>
+
         <div class="container" id="body">
 
         </div>
         <div class="container" id="footer">
 
         </div>
+
+        <div class="container" id="modal">
+            <dialog>
+                <form action="" class="modalForm" id="newBook">
+                    <h3>
+                        Add New Book
+                    </h3>
+                    <input type="text" class="input" id="title" placeholder="Title" required maxlength="100">
+                    <input type="text" class="input" id="author" placeholder="Title" required maxlength="100">
+                    <input type="text" class="input" id="genre" placeholder="Title" required maxlength="100">
+                    <div class="modalInput" id="isRead">
+                        <label class="switch" id="isRead">
+                            Read
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+
     </div>
 </body>
 </html>
