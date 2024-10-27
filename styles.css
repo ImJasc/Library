@@ -27,3 +27,76 @@ body{
     color: #fff;
     font-size: 24px;
 }
+
+dialog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: opacity .5s;
+    border-radius: 0.5rem;
+    padding: 0;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+    animation: scale-up .5s forwards;
+}
+
+@keyframes scale-up{
+    0%{
+      scale:0;
+    }
+    100%{
+      scale:1;
+    }
+  }
+
+dialog.hide{
+    animation: scale-down .5s forwards;
+}
+
+@keyframes scale-down{
+    0%{
+      scale:1;
+    }
+    100%{
+      scale:0;
+    }
+}
+
+  dialog:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(0.25rem);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+form .input{
+    border-radius: 4px;
+    font-size: 18px;
+    border-width: 1px;
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+form button{
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px 5px;
+    border-width: 1px;
+}
