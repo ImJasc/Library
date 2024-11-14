@@ -10,7 +10,48 @@ class book {
 }
 
 function addBookToLibrary(){
-    
+    clearLibrary();
+    library.forEach(book =>{
+        createCard(book);
+    });
+}
+
+function createCard(book){
+    const grid = document.querySelector("div#body");
+    const card = document.createElement("div");
+    const cardTitle = document.createElement("p");
+    const cardGenre = document.createElement("p");
+    const cardAuthor = document.createElement("p");
+    const cardisRead = document.createElement("button");
+
+    card.classList.add("card");
+    cardTitle.classList.add("cardInfo");
+    cardGenre.classList.add("cardInfo");
+    cardAuthor.classList.add("cardInfo");
+    cardisRead.classList.add("btnCard");
+
+    if(book.read===true){
+        cardisRead.classList.add("read");
+        cardisRead.innerText = "Read"
+    }else{
+        cardisRead.classList.add("notRead");
+        cardisRead.innerText = "Not read"
+    }
+
+    cardTitle.innerHTML = book.title;
+    cardGenre.innerHTML = book.genre;
+    cardAuthor.innerHTML = book.author;
+
+    card.appendChild(cardTitle);
+    card.appendChild(cardGenre);
+    card.appendChild(cardAuthor);
+    card.appendChild(cardisRead);
+    grid.appendChild(card);
+}
+
+function clearLibrary(){
+    const library = document.querySelector("div#body");
+    library.innerHTML ="";
 }
 
 const dialog = document.querySelector("dialog");
@@ -35,13 +76,13 @@ function submit (e){
         const genre = document.querySelector("input#genre").value;
         const isRead = document.querySelector("input#read").checked;
         library.push(new book(title, author, genre, isRead));
-        console.log(library);
         dialog.classList.add('hide');
         dialog.addEventListener('webkitAnimationEnd', function(){
             dialog.classList.remove('hide');
             dialog.close();
             dialog.removeEventListener('webkitAnimationEnd',  arguments.callee, false);
         }, false);
+        addBookToLibrary();
     }else{
         addBookForm.reportValidity();
     }

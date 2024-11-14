@@ -171,3 +171,47 @@ input:checked + .slider:before {
     font-size: 18px;
     font-weight: bold;
 }
+
+div.card{
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.container#body{
+    padding: 50px 30px 50px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 250px));
+    height: 91vh;
+    gap: 20px;
+}
+
+button.read{
+    background-color: #009400;
+    color: #ffffff;
+    height: 50px;
+    font-size: 24px;
+    border: none;
+    border-radius: 16px;
+}
+
+button.notRead{
+    background-color: #a50000;
+    color: #ffffff;
+    height: 50px;
+    font-size: 24px;
+    border: none;
+    border-radius: 16px;
+}
+
+.cardInfo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
